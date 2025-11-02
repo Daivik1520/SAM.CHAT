@@ -48,33 +48,39 @@
 <td width="50%">
 
 ### 🎯 **Core Features**
-```mermaid
-graph LR
-    A[🔥 Real-time Chat] --> B[💬 Direct Messages]
-    A --> C[👥 Group Chats]
-    A --> D[🔍 Smart Search]
-    A --> E[👤 Rich Profiles]
-    B --> F[📱 Mobile Ready]
-    C --> F
-    D --> F
-    E --> F
-```
+
+🔥 **Real-time Chat**
+- 💬 Direct Messages
+- 👥 Group Chats  
+- 🔍 Smart Search
+- 👤 Rich Profiles
+- 📱 Mobile Ready
+
+✨ **Advanced Features**
+- 🎨 Dark/Light Mode
+- 🔔 Push Notifications
+- 📁 File Sharing
+- 🎵 Voice Messages
+- 🔐 End-to-End Security
 
 </td>
 <td width="50%">
 
-### ⚡ **Performance**
-```mermaid
-graph TD
-    A[🚀 SAM.CHAT] --> B[< 1s Load Time]
-    A --> C[< 100ms Messages]
-    A --> D[95+ Mobile Score]
-    A --> E[🔒 Bank Security]
-    B --> F[😍 Happy Users]
-    C --> F
-    D --> F
-    E --> F
-```
+### ⚡ **Performance Excellence**
+
+🚀 **Lightning Fast**
+- < 1s Load Time
+- < 100ms Messages
+- 95+ Mobile Score
+- 🔒 Bank Security
+- 😍 Happy Users
+
+📊 **Technical Stats**
+- Zero Console Errors
+- Optimized Database
+- Real-time Updates
+- Auto-scaling Ready
+- Production Tested
 
 </td>
 </tr>
@@ -121,7 +127,7 @@ graph TD
 <tr>
 <td width="33%" align="center">
 
-![Chat Icon](https://img.icons8.com/fluency/96/000000/chat.png)
+<img src="https://img.icons8.com/fluency/96/000000/chat.png" alt="Chat Icon">
 
 • Real-time messaging<br>
 • Read receipts<br>
@@ -132,7 +138,7 @@ graph TD
 </td>
 <td width="33%" align="center">
 
-![Group Icon](https://img.icons8.com/fluency/96/000000/conference-call.png)
+<img src="https://img.icons8.com/fluency/96/000000/conference-call.png" alt="Group Icon">
 
 • Unlimited groups<br>
 • Admin controls<br>
@@ -143,7 +149,7 @@ graph TD
 </td>
 <td width="33%" align="center">
 
-![Security Icon](https://img.icons8.com/fluency/96/000000/security-shield-green.png)
+<img src="https://img.icons8.com/fluency/96/000000/security-shield-green.png" alt="Security Icon">
 
 • JWT authentication<br>
 • Password hashing<br>
@@ -220,33 +226,23 @@ NEXT_PUBLIC_API_URL=http://localhost:3000
 
 ### System Overview
 
-```mermaid
-graph TB
-    A[👤 User] --> B[🌐 Next.js Frontend]
-    B --> C[🔗 API Routes]
-    C --> D[🔐 JWT Auth]
-    C --> E[🗄️ PostgreSQL]
-    C --> F[⚡ WebSocket]
-    F --> G[📱 Real-time Updates]
-    G --> B
-    
-    subgraph "🛡️ Security Layer"
-        D
-        H[🔒 bcrypt]
-        I[🛡️ CORS]
-    end
-    
-    subgraph "💾 Data Layer"
-        E
-        J[📊 Optimized Queries]
-        K[🔍 Indexed Search]
-    end
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
+```
+🌐 User Interface (Next.js + React)
+          ↓
+🔗 API Routes (Next.js API)
+          ↓
+🔐 Authentication (JWT + bcrypt)
+          ↓
+🗄️ Database (PostgreSQL)
+          ↓
+⚡ Real-time Updates (WebSocket)
+```
+
+### Data Flow
+```
+👤 User → 🌐 Frontend → 🔗 API → 🔐 Auth → 🗄️ Database
+                                              ↓
+📱 Real-time ← ⚡ WebSocket ← 🔄 Updates ← 📊 Queries
 ```
 
 </div>
@@ -420,6 +416,52 @@ Content-Type: application/json
 
 </details>
 
+<details>
+<summary><b>👥 Groups & Users Endpoints</b></summary>
+
+### Create Group
+```http
+POST /api/groups
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "name": "Development Team",
+  "description": "Team collaboration"
+}
+
+✅ Response: 201 Created
+{
+  "group": {
+    "id": 1,
+    "name": "Development Team",
+    "description": "Team collaboration",
+    "creator_id": 1
+  }
+}
+```
+
+### Search Users
+```http
+GET /api/users?search=john
+Authorization: Bearer {token}
+
+✅ Response: 200 OK
+{
+  "users": [
+    {
+      "id": 2,
+      "username": "john_smith",
+      "email": "john.smith@example.com",
+      "bio": "Software Developer",
+      "status": "online"
+    }
+  ]
+}
+```
+
+</details>
+
 ---
 
 ## 🚀 **Deployment**
@@ -456,6 +498,15 @@ Content-Type: application/json
 ```bash
 docker build -t sam-chat .
 docker run -p 3000:3000 --env-file .env sam-chat
+```
+
+**Manual Deployment:**
+```bash
+# Build for production
+bun run build
+
+# Start production server  
+bun run start
 ```
 
 </details>
@@ -521,27 +572,43 @@ git push origin feature/amazing-feature
 
 <div align="center">
 
-```mermaid
-timeline
-    title SAM.CHAT Roadmap
-    
-    Q4 2025 : Real-time Notifications
-           : Mobile Apps
-           : Video Calls
-           : Voice Messages
-           
-    Q1 2026 : AI Chatbot
-           : Multi-language Support
-           : File Sharing
-           : E2E Encryption
-           
-    Q2 2026 : Mini Games
-           : Business Features
-           : Advanced Analytics
-           : Custom Themes
-```
+### **Future Plans**
 
 </div>
+
+<table>
+<tr>
+<th>Q4 2025</th>
+<th>Q1 2026</th>
+<th>Q2 2026</th>
+</tr>
+<tr>
+<td width="33%">
+
+🔔 Real-time Notifications<br>
+📱 Mobile Apps<br>
+🎥 Video Calls<br>
+🎵 Voice Messages<br>
+
+</td>
+<td width="33%">
+
+🤖 AI Chatbot<br>
+🌍 Multi-language<br>
+📁 File Sharing<br>
+🔐 E2E Encryption<br>
+
+</td>
+<td width="33%">
+
+🎮 Mini Games<br>
+🏢 Business Features<br>
+📊 Advanced Analytics<br>
+🎨 Custom Themes<br>
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -579,6 +646,14 @@ sessionStorage.clear();
 
 // Check JWT_SECRET
 echo $JWT_SECRET
+```
+
+### Build Issues
+```bash
+# Clear cache and rebuild
+rm -rf .next node_modules
+bun install
+bun run build
 ```
 
 </details>
